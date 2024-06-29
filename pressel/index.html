@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Atendimento ao Cliente</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 90%;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #0288d1;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #026aa7;
+        }
+
+        .links {
+            margin-top: 25px;
+            font-size: 15px;
+        }
+
+        .links a {
+            color: #0288d1;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .links a:hover {
+            color: #026aa7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 650px;
+            overflow-y: auto;
+            max-height: 85%;
+            text-align: left;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            color: #888;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 7px 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                max-width: 100%;
+                max-height: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon">📞</div>
+        <p>Saiba mais clicando no botão abaixo!</p>
+        <a id="chatButton" class="button" href="#">Consultar Hoje</a>
+        <div class="icon">💼</div>
+        <div class="links">
+            <a class="open-modal" data-modal="privacy">Política de Privacidade</a>
+            <a class="open-modal" data-modal="terms">Termos de Uso</a>
+            <a class="open-modal" data-modal="services">Serviços</a>
+        </div>
+    </div>
+
+<!-- Modal de Política de Privacidade -->
+<div id="modal-privacy" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h1>Política de Privacidade</h1>
+        <p>Nos comprometemos com a proteção da sua privacidade. Veja como tratamos suas informações pessoais.</p>
+        <h2>1. Coleta de Dados</h2>
+        <p>Recolhemos informações como nome, e-mail e dados de contato quando você utiliza nossos serviços.</p>
+        <h2>2. Uso das Informações</h2>
+        <p>Utilizamos seus dados para processar suas solicitações, personalizar o atendimento e enviar comunicações importantes.</p>
+        <h2>3. Compartilhamento de Dados</h2>
+        <p>Não compartilhamos suas informações com terceiros, exceto quando exigido por lei.</p>
+        <h2>4. Utilização de Cookies</h2>
+        <p>Utilizamos cookies para melhorar sua experiência. Você pode gerenciar as configurações de cookies no seu navegador.</p>
+        <h2>5. Segurança dos Dados</h2>
+        <p>Adotamos medidas de segurança para proteger suas informações contra acessos não autorizados.</p>
+        <h2>6. Direitos do Usuário</h2>
+        <p>Você tem o direito de acessar, corrigir ou solicitar a exclusão de seus dados. Entre em contato conosco para mais informações.</p>
+        <p>Última atualização: [Inserir data]</p>
+    </div>
+</div>
+
+<!-- Modal de Termos de Uso -->
+<div id="modal-terms" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h1>Termos de Uso</h1>
+        <p>Estes termos regem o uso dos nossos serviços. Leia atentamente.</p>
+        <h2>1. Aceitação dos Termos</h2>
+        <p>Ao utilizar nosso site, você concorda com estes termos. Se não concordar, por favor, não utilize nossos serviços.</p>
+        <h2>2. Uso dos Serviços</h2>
+        <p>Utilize nossos serviços de acordo com a legislação e nossos termos.</p>
+        <h2>3. Propriedade Intelectual</h2>
+        <p>Todo o conteúdo do site é de nossa propriedade ou licenciado para nós.</p>
+        <h2>4. Limitação de Responsabilidade</h2>
+        <p>Não somos responsáveis por danos diretos ou indiretos resultantes do uso dos nossos serviços.</p>
+        <h2>5. Encerramento</h2>
+        <p>Podemos suspender ou encerrar seu acesso aos serviços a qualquer momento, sem aviso prévio, se você violar estes termos.</p>
+        <p>Última atualização: [Inserir data]</p>
+    </div>
+</div>
+
+<!-- Modal de Serviços de Atendimento -->
+<div id="modal-services" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h1>Serviços de Atendimento ao Cliente</h1>
+        <p>Nossos serviços são projetados para oferecer suporte completo. Confira os detalhes abaixo.</p>
+        <h2>1. Suporte via Chat</h2>
+        <p>Converse conosco através do chat ao vivo. Clique no botão acima para iniciar.</p>
+        <h2>2. Suporte Telefônico</h2>
+        <p>Ligue para nós durante o horário comercial para obter suporte.</p>
+        <h2>3. Atendimento por E-mail</h2>
+        <p>Envie suas perguntas por e-mail e responderemos prontamente.</p>
+        <h2>4. Central de Ajuda</h2>
+        <p>Visite nossa central de ajuda para encontrar respostas para as perguntas mais frequentes.</p>
+        <p>Última atualização: [Inserir data]</p>
+    </div>
+</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Criação do modal para o chat do Typebot
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.zIndex = '999';
+
+            // Adiciona o botão de fechar ao modal
+            const closeButton = document.createElement('span');
+            closeButton.classList.add('close');
+            closeButton.innerHTML = '&times;';
+            modal.appendChild(closeButton);
+
+            // Criação do elemento <typebot-standard> para mostrar o chat
+            const typebotElement = document.createElement('typebot-standard');
+            typebotElement.style.width = '100%';
+            typebotElement.style.height = '100%';
+
+            // Adiciona o elemento <typebot-standard> ao modal
+            const modalContent = document.createElement('div');
+            modalContent.classList.add('modal-content');
+            modalContent.appendChild(typebotElement);
+            modal.appendChild(modalContent);
+
+            // Função para inicializar o Typebot no popup
+            const initTypebot = () => {
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.60/dist/web.js';
+                script.onload = function() {
+                    Typebot.initStandard({
+                        typebot: "passagensdesconto",
+                        apiHost: "https://api.passagensdesconto.com",
+                    });
+                };
+                document.body.appendChild(script);
+            };
+
+            // Adiciona o modal ao final do body para exibição
+            document.body.appendChild(modal);
+
+            // Função para fechar o modal ao clicar no botão de fechar (X)
+            closeButton.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            // Fechar modal ao clicar fora da área do chat
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Exibir o modal ao clicar no botão "Consultar Atendimento"
+            document.getElementById('chatButton').addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.style.display = 'flex';
+                initTypebot();
+            });
+        });
+
+        // Função para exibir outros modais ao clicar nos links
+        document.querySelectorAll('.open-modal').forEach(link => {
+            link.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                const modal = document.getElementById(`modal-${modalId}`);
+                modal.style.display = 'flex';
+
+                // Fechar modal ao clicar no botão de fechar (X)
+                modal.querySelector('.close').addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+            });
+        });
+    </script>
+
+
+
+</body></html>
