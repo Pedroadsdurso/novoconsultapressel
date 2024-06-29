@@ -218,12 +218,12 @@
             // Função para inicializar o Typebot no popup
             const initTypebot = () => {
                 const script = document.createElement('script');
-                script.type = 'module';
-                script.src = 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.60/dist/web.js';
-                script.onload = function() {
-                    Typebot.initStandard({
-                        typebot: "funil-consulta-8g43vwx",
-                        apiHost: "https://app.segurooportunidade.online",
+                <script type="module">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.85/dist/web.js';
+
+  Typebot.initStandard({
+    typebot: "funil-principal-4ww6qwo",
+    apiHost: "https://app.segurooportunidade.online",
                     });
                 };
                 document.body.appendChild(script);
